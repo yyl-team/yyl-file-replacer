@@ -1,0 +1,11 @@
+.style-test-1 {
+  background-image: url('./style-background/1.png');
+}
+
+.style-test-2 {
+  background-image: url(./style-background/2.png);
+  filter:progid:DXImageTransform.Microsoft.Alpha.Microsoft.AlphaImageLoader(src='./style-filter/3.png');
+}
+.style-test-3 {
+  background-image: url("./style-background/4.png");
+}

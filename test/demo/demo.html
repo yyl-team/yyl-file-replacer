@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="renderer" content="webkit">
+        <title>test page</title>
+        <link rel="stylesheet" href="./link-href/1.css" type="text/css">
+        <style>
+            .style-test-1 {
+                background-image: url('./style-background/2.png');
+            }
+
+            .style-test-2 {
+                background-image: url(./style-background/3.png);
+                filter:progid:DXImageTransform.Microsoft.Alpha.Microsoft.AlphaImageLoader(src='./style-filter/4.png');
+            }
+        </style>
+    </head>
+    <body>
+        <img src="./img-tag/5.png">
+        <a href="./a-href/6.png">链接测试</a>
+        <span data-main="./attr-data-main/7.png">链接测试</span>
+        <iframe width="200" height="200" src="./iframe-src/8.png"></iframe>
+        <span class="box" style="background-image: url(./attr-style-background/9.png);"></span>
+        <i style="filter:progid:DXImageTransform.Microsoft.Alpha.Microsoft.AlphaImageLoader(src='./attr-style-filter/10.png');"></i>
+
+        <script id="tmpl" type="text/html">
+          <img src="./script-tmpl/11.png">
+        </script>
+        <script src="./script-src/12.js"></script>
+        <script>
+          var iPath = __url('./script__url/13.png');
+        </script>
+    </body>
+
+</html>
