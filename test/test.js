@@ -4,7 +4,7 @@ const expect = require('chai').expect;
 const replacer = require('../index.js');
 
 const TEST_CTRL = {
-  // REPLACER: true,
+  REPLACER: true,
   REG: true
 };
 if (TEST_CTRL.REPLACER) {
@@ -28,7 +28,7 @@ if (TEST_CTRL.REPLACER) {
       });
     };
 
-    it('replacer.htmlPathMatch test', (done) => {
+    it('replacer.htmlPathMatch()', (done) => {
       const ctx = fs.readFileSync(HTML_DEMO_PATH).toString();
       const rPaths = [];
       replacer.htmlPathMatch(ctx, (str) => {
@@ -40,7 +40,7 @@ if (TEST_CTRL.REPLACER) {
       done();
     });
 
-    it('replacer.cssPathMatch test', (done) => {
+    it('replacer.cssPathMatch()', (done) => {
       const ctx = fs.readFileSync(CSS_DEMO_PATH).toString();
       const rPaths = [];
       replacer.cssPathMatch(ctx, (str) => {
@@ -52,7 +52,7 @@ if (TEST_CTRL.REPLACER) {
       done();
     });
 
-    it('replacer.jsPathMatch test', (done) => {
+    it('replacer.jsPathMatch()', (done) => {
       const ctx = fs.readFileSync(JS_DEMO_PATH).toString();
       const rPaths = [];
       replacer.jsPathMatch(ctx, (str) => {
@@ -67,9 +67,9 @@ if (TEST_CTRL.REPLACER) {
 }
 
 if (TEST_CTRL.REG) {
-  describe('REG test', () => {
+  describe('replacer.REG test', () => {
     const REG = replacer.REG;
-    it('REG.HTML_PATH_REG', (done) => {
+    it('replacer.REG.HTML_PATH_REG', (done) => {
       const trueExamples = [
         '<a href="demo.js"></a>',
         '<a href=\'demo.js\'></a>',
@@ -90,7 +90,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.HTML_SCRIPT_REG', (done) => {
+    it('replacer.REG.HTML_SCRIPT_REG', (done) => {
       const true01Examples = [
         '<script data-main="hello"></script>',
         '<script></script>'
@@ -111,7 +111,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.HTML_IGNORE_REG', (done) => {
+    it('replacer.REG.HTML_IGNORE_REG', (done) => {
       const trueExamples = [
         'about:blank;',
         'data:image/png;base64,xxxx',
@@ -133,7 +133,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.HTML_SCRIPT_TEMPLATE_REG', (done) => {
+    it('replacer.REG.HTML_SCRIPT_TEMPLATE_REG', (done) => {
       const trueExamples = [
         '<script type="text/html"> var a = 1; </script>',
         '<script type=\'text/html\'> var a = 1; </script>'
@@ -151,7 +151,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.HTML_ALIAS_REG', (done) => {
+    it('replacer.REG.HTML_ALIAS_REG', (done) => {
       const trueExamples = [
         '{$key}'
       ];
@@ -168,7 +168,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.HTML_IS_ABSLUTE', (done) => {
+    it('replacer.REG.HTML_IS_ABSLUTE', (done) => {
       const trueExamples = [
         '/path/to/dest.js'
       ];
@@ -187,7 +187,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.HTML_STYLE_TAG_REG', (done) => {
+    it('replacer.REG.HTML_STYLE_TAG_REG', (done) => {
       const trueExamples = [
         '<a style="display: block;"></a>',
         '<a style=\'display: block;\'></a>'
@@ -204,7 +204,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.HTML_STYLE_REG', (done) => {
+    it('replacer.REG.HTML_STYLE_REG', (done) => {
       const trueExamples = [
         '<style>a {display: block;}</style>',
         '<style type="text/css">\na {display: block; }\n</style>'
@@ -221,7 +221,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.HTML_SRC_COMPONENT_JS_REG', (done) => {
+    it('replacer.REG.HTML_SRC_COMPONENT_JS_REG', (done) => {
       const trueExamples = [
         '../components/p-aa/p-aa.js',
         '../components/t-aa/t-aa.js',
@@ -244,7 +244,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.HTML_SRC_COMPONENT_IMG_REG', (done) => {
+    it('replacer.REG.HTML_SRC_COMPONENT_IMG_REG', (done) => {
       const trueExamples = [
         '../components/p-aa/images',
         '../components/t-aa/images',
@@ -269,7 +269,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.CSS_PATH_REG', (done) => {
+    it('replacer.REG.CSS_PATH_REG', (done) => {
       const trueExamples = [
         'a { background-images: url(demo.png) }',
         'a { background-images: url("demo.png") }',
@@ -291,7 +291,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.CSS_PATH_REG2', (done) => {
+    it('replacer.REG.CSS_PATH_REG2', (done) => {
       const trueExamples = [
         'a { filter:progid:DXImageTransform.Microsoft.Alpha.Microsoft.AlphaImageLoader(src=\'demo.png\');}',
         'a { filter:progid:DXImageTransform.Microsoft.Alpha.Microsoft.AlphaImageLoader(src="demo.png");}'
@@ -310,7 +310,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.CSS_IGNORE_REG', (done) => {
+    it('replacer.REG.CSS_IGNORE_REG', (done) => {
       const trueExamples = [
         'about:blank;',
         'data:image/png;base64,xxxx',
@@ -335,7 +335,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.CSS_IS_ABSLURE', (done) => {
+    it('replacer.REG.CSS_IS_ABSLURE', (done) => {
       const trueExamples = [
         '/path/to/dest.js'
       ];
@@ -354,7 +354,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.JS_DISABLE_AMD', (done) => {
+    it('replacer.REG.JS_DISABLE_AMD', (done) => {
       const trueExamples = [
         '/*amd:disabled*/',
         '/* amd : disabled */',
@@ -373,7 +373,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.JS_EXCLUDE', (done) => {
+    it('replacer.REG.JS_EXCLUDE', (done) => {
       const trueExamples = [
         '/*exclude: liveplayer*/',
         '/*exclude: liveplayer, mod02*/',
@@ -393,7 +393,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.JS_SUGAR__URL', (done) => {
+    it('replacer.REG.JS_SUGAR__URL', (done) => {
       const trueExamples = [
         '/* var a = __url(\'demo.png\')*/',
         '/* var a = __url (\'demo.png\')*/',
@@ -413,7 +413,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.IS_HTTP', (done) => {
+    it('replacer.REG.IS_HTTP', (done) => {
       const trueExamples = [
         'http://www.yy.com',
         'https://www.yy.com',
@@ -435,7 +435,7 @@ if (TEST_CTRL.REG) {
       done();
     });
 
-    it('REG.IS_MAIN_REMOTE', (done) => {
+    it('replacer.REG.IS_MAIN_REMOTE', (done) => {
       const trueExamples = [
         'path/to/dest/demo.html',
         'path/to/dest/demo.tpl',
@@ -457,6 +457,29 @@ if (TEST_CTRL.REG) {
       });
       falseExamples.forEach((ctx) => {
         expect(ctx.match(REG.IS_MAIN_REMOTE)).equal(null);
+      });
+      done();
+    });
+
+    it('replacer.REG.JS_REMOTE_ASSETS_URL', (done) => {
+      const trueExamples = [
+        'var a = "//yyweb.static.com/assets/demo.js"',
+        'var a = \'//yyweb.static.com/assets/demo.js\'',
+        'var a = "http://yyweb.static.com/assets/demo.js"',
+        'var a = "https://yyweb.static.com/assets/demo.js"',
+        'var a = "/assets/demo.js"'
+      ];
+      const falseExamples = [
+        'var a = "//yyweb.static.com/" + "assets/demo.js"',
+        'var a = "//yyweb.static.com/assets/demo"',
+        'var a = "//yyweb.static.com/assets/demo.jpegg"',
+        'var a = "yyweb.static.com/assets/demo.js"'
+      ];
+      trueExamples.forEach((ctx) => {
+        expect(ctx.match(REG.JS_REMOTE_ASSETS_URL)).not.equal(null);
+      });
+      falseExamples.forEach((ctx) => {
+        expect(ctx.match(REG.JS_REMOTE_ASSETS_URL)).equal(null);
       });
       done();
     });
