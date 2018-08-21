@@ -1,4 +1,7 @@
 # 版本信息
+## 0.3.1 (2018-08-02)
+* [FIX] 修复 `frp.jsPathMatch()` 函数 应用 `frp.REG.JS_REMOTE_ASSETS_URL` 对 路径进行筛选 只匹配 1 个的问题
+
 ## 0.3.0 (2018-08-02)
 * [EDIT] `frp.jsPathMatch()` 函数 应用 `frp.REG.JS_REMOTE_ASSETS_URL` 对 路径进行筛选
 
