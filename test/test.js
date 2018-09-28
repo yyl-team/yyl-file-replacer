@@ -440,7 +440,9 @@ if (TEST_CTRL.REG) {
         'path/to/dest/demo.html',
         'path/to/dest/demo.tpl',
         'path/to/dest/demo.svga',
-        'path/to/dest/demo.htm'
+        'path/to/dest/demo.htm',
+        'path/to/dest/demo.ttf',
+        'path/to/dest/demo.woff'
       ];
       const falseExamples = [
         'path/to/dest/demo.js',

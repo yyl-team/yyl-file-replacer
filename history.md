@@ -1,4 +1,7 @@
 # 版本信息
+## 0.4.0 (2018-09-28)
+* [EDIT] `frp.REG.IS_MAIN_REMOTE` 新增 适配 `ttf`, `woff`
+
 ## 0.3.1 (2018-08-02)
 * [FIX] 修复 `frp.jsPathMatch()` 函数 应用 `frp.REG.JS_REMOTE_ASSETS_URL` 对 路径进行筛选 只匹配 1 个的问题
 
