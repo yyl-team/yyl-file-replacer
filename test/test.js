@@ -170,7 +170,8 @@ if (TEST_CTRL.REG) {
 
     it('replacer.REG.HTML_IS_ABSLUTE', (done) => {
       const trueExamples = [
-        '/path/to/dest.js'
+        '/path/to/dest.js',
+        '/{{sid}}/{{ssid}}'
       ];
       const falseExamples = [
         'http://www.yy.com',
@@ -337,7 +338,8 @@ if (TEST_CTRL.REG) {
 
     it('replacer.REG.CSS_IS_ABSLURE', (done) => {
       const trueExamples = [
-        '/path/to/dest.js'
+        '/path/to/dest.js',
+        '/{{sid}}/{{ssid}}'
       ];
       const falseExamples = [
         'http://www.yy.com',

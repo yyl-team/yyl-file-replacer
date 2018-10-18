@@ -1,4 +1,7 @@
 # 版本信息
+## 0.4.1 (2018-10-18)
+* [FIX] `frp.REG.HTML_IS_ABSLUTE` not match `/{{sid}}/{{ssid}}` bugfix
+
 ## 0.4.0 (2018-09-28)
 * [EDIT] `frp.REG.IS_MAIN_REMOTE` 新增 适配 `ttf`, `woff`
 
