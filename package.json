@@ -1,9 +1,9 @@
 {
   "name": "yyl-file-replacer",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "a file replace plugin for yyl",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/replacer.js",
+  "types": "lib/replacer.d.ts",
   "scripts": {
     "test": "mocha ./test/test.js"
   },
