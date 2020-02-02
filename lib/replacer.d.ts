@@ -1,7 +1,8 @@
 enum MatchType {
   CSS_PATH = 'css-path',
   JS_PATH = 'js-path',
-  HTML_PATH = 'html-path'
+  HTML_PATH = 'html-path',
+  JS_URL = '__url'
 }
 
 interface Replacer {
