@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const expect = require('chai').expect;
-const replacer = require('../index.js');
+const replacer = require('../lib/replacer');
 
 const TEST_CTRL = {
   REPLACER: true,
