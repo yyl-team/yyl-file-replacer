@@ -63,6 +63,22 @@ if (TEST_CTRL.REPLACER) {
       sortAndCheck(rPaths);
       done();
     });
+
+    it('replacer.jsPathMatch(2)', (done) => {
+      const ctx = `
+        var a = __url('path/to/js')
+      `;
+      const rPaths = [];
+      const r = replacer.jsPathMatch(ctx, (str) => {
+        rPaths.push(str);
+        return str;
+      });
+      expect(r).to.equal(`
+        var a = 'path/to/js'
+      `);
+
+      done();
+    });
   });
 }
 
@@ -405,8 +421,8 @@ if (TEST_CTRL.REG) {
       ];
       trueExamples.forEach((ctx) => {
         expect(ctx.match(REG.JS_SUGAR__URL)).not.equal(null);
-        ctx.replace(REG.JS_SUGAR__URL, (str, $1) => {
-          expect($1).to.equal('demo.png');
+        ctx.replace(REG.JS_SUGAR__URL, (str, $1, $2) => {
+          expect($2).to.equal('demo.png');
         });
       });
       falseExamples.forEach((ctx) => {
