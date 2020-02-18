@@ -1,6 +1,11 @@
 # 版本信息
+## 0.6.0 (2020-02-18)
+* feat: `frp.jsPathMatch()` 新增 `__html` 语法糖
+* mocha 单元测试代码整理
+
 ## 0.5.0 (2020-02-03)
 * feat: `frp.jsPathMatch()` 匹配逻辑修改
+
 ## 0.4.4 (2020-02-02)
 * feat: 添加 types
 

@@ -1,11 +1,11 @@
 {
   "name": "yyl-file-replacer",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "a file replace plugin for yyl",
   "main": "lib/replacer.js",
   "types": "lib/replacer.d.ts",
   "scripts": {
-    "test": "mocha ./test/test.js"
+    "test": "mocha ./test/mocha/"
   },
   "repository": {
     "type": "git",

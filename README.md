@@ -46,13 +46,14 @@ interface Replacer {
 ```javascript
 const { jsPathMatch } = require('yyl-file-replacer')
 const jsStr = `
-  const a = __url(path/to/js)
+  const a = __url('path/to/js')
+  const b = __html('path/to/html')
 `
 const r = []
-jsPathMatch(jsStr, (matchUrl, type) => {
-  r.push(matchUrl)
+jsPathMatch(jsStr, (url, type, q) => {
+  r.push({url, type, q})
 )
-console.log(r) // [path/to/js]
+console.log(r) // [{ url: 'path/to/js', type: '__url', q: '\''}, { url: 'path/to/html', type: '__html', q: '\''}]
 ```
 
 ### cssPathMatch

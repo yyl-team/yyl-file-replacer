@@ -2,7 +2,8 @@ enum MatchType {
   CSS_PATH = 'css-path',
   JS_PATH = 'js-path',
   HTML_PATH = 'html-path',
-  JS_URL = '__url'
+  JS_URL = '__url',
+  JS_HTML = '__html'
 }
 
 interface Replacer {
@@ -25,7 +26,10 @@ interface Replacer {
 
     JS_DISABLE_AMD: RegExp
     JS_EXCLUDE: RegExp
+    /** 匹配 js 中的 __url('path/to/any') */ 语法
     JS_SUGAR__URL: RegExp
+    /** 匹配 js 中的 __html('path/to/any.html') */ 语法
+    JS_SUGAR__HTML: RegExp
     JS_REMOTE_ASSETS_URL: RegExp
 
     IS_HTTP: RegExp
@@ -34,7 +38,7 @@ interface Replacer {
   /** html replacer */
   htmlPathMatch(ctx: string, handle: (matchUrl: string, type: MatchType) => string): string
   /** js replacer */
-  jsPathMatch(ctx: string, handle: (matchUrl: string, type: MatchType.JS_PATH) => string): string
+  jsPathMatch(ctx: string, handle: (matchUrl: string, type: MatchType.JS_HTML | MatchType.JS_PATH | MatchType.JS_URL) => string): string
   /** css replacer */
   cssPathMatch(ctx: string, handle: (matchUrl: string, type: MatchType.CSS_PATH) => string): string
 }
