@@ -39,6 +39,8 @@ interface Replacer {
   htmlPathMatch(ctx: string, handle: (matchUrl: string, type: MatchType) => string): string
   /** js replacer */
   jsPathMatch(ctx: string, handle: (matchUrl: string, type: MatchType.JS_HTML | MatchType.JS_PATH | MatchType.JS_URL) => string): string
+  /** js replacer legacy */
+  jsPathMatchLegacy(ctx: string, handle: (matchUrl: string, type: MatchType.JS_HTML | MatchType.JS_PATH | MatchType.JS_URL) => string): string
   /** css replacer */
   cssPathMatch(ctx: string, handle: (matchUrl: string, type: MatchType.CSS_PATH) => string): string
 }
