@@ -51,4 +51,23 @@ describe('frp.jsPathMatchLegacy', () => {
     ]);
     done();
   });
+
+  it('replacer.htmlPathMatchLegacy() for script __url', (done) => {
+    const ctx = `
+      <script>
+      var a = __url('path/to/js')
+      </script>
+    `;
+    const rPaths = [];
+    const r = frp.htmlPathMatchLegacy(ctx, (str) => {
+      rPaths.push(str);
+      return str;
+    });
+    expect(r).to.equal(`
+      <script>
+      var a = path/to/js
+      </script>
+    `);
+    done();
+  });
 });

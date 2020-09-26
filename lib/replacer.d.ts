@@ -37,6 +37,8 @@ interface Replacer {
   }
   /** html replacer */
   htmlPathMatch(ctx: string, handle: (matchUrl: string, type: MatchType) => string): string
+  /** html replacer legacy for requirejs */
+  htmlPathMatchLegacy(ctx: string, handle: (matchUrl: string, type: MatchType) => string): string
   /** js replacer */
   jsPathMatch(ctx: string, handle: (matchUrl: string, type: MatchType.JS_HTML | MatchType.JS_PATH | MatchType.JS_URL) => string): string
   /** js replacer legacy */
