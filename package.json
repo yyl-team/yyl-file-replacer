@@ -5,7 +5,8 @@
   "main": "lib/replacer.js",
   "types": "lib/replacer.d.ts",
   "scripts": {
-    "test": "mocha ./test/mocha/"
+    "test": "mocha ./test/mocha/",
+    "prepublishOnly": "npm test"
   },
   "repository": {
     "type": "git",
