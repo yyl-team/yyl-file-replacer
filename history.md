@@ -1,4 +1,7 @@
 # 版本信息
+## 0.6.3 (2020-09-26)
+* feat: 新增 `frp.htmlPathMatchLegacy()` 用于 `yyl-seed-gulp-requirejs` 项目
+
 ## 0.6.1 (2020-02-23)
 * feat: 新增 `frp.jsPathMatchLegacy()` 用于 `yyl-seed-gulp-requirejs` 项目
 
