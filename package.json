@@ -1,6 +1,6 @@
 {
   "name": "yyl-file-replacer",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "a file replace plugin for yyl",
   "main": "lib/replacer.js",
   "types": "lib/replacer.d.ts",
