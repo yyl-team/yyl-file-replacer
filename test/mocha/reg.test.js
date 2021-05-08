@@ -54,8 +54,8 @@ describe('replacer.REG test', () => {
       '{{key}}'
     ];
     const falseExamples = [
-      'http://www.yy.com',
-      '//www.yy.com',
+      'http://www.testhost.com',
+      '//www.testhost.com',
       'path/to/dest.js'
     ];
     trueExamples.forEach((ctx) => {
@@ -108,9 +108,9 @@ describe('replacer.REG test', () => {
       '/{{sid}}/{{ssid}}'
     ];
     const falseExamples = [
-      'http://www.yy.com',
-      '//www.yy.com',
-      'https://www.yy.com',
+      'http://www.testhost.com',
+      '//www.testhost.com',
+      'https://www.testhost.com',
       './path/to/dest.js'
     ];
     trueExamples.forEach((ctx) => {
@@ -254,8 +254,8 @@ describe('replacer.REG test', () => {
       '{{key}}'
     ];
     const falseExamples = [
-      'http://www.yy.com',
-      '//www.yy.com',
+      'http://www.testhost.com',
+      '//www.testhost.com',
       'path/to/dest.js'
     ];
     trueExamples.forEach((ctx) => {
@@ -276,9 +276,9 @@ describe('replacer.REG test', () => {
       '/{{sid}}/{{ssid}}'
     ];
     const falseExamples = [
-      'http://www.yy.com',
-      '//www.yy.com',
-      'https://www.yy.com',
+      'http://www.testhost.com',
+      '//www.testhost.com',
+      'https://www.testhost.com',
       './path/to/dest.js'
     ];
     trueExamples.forEach((ctx) => {
@@ -351,12 +351,12 @@ describe('replacer.REG test', () => {
 
   it('frp.REG.IS_HTTP', (done) => {
     const trueExamples = [
-      'http://www.yy.com',
-      'https://www.yy.com',
-      '//www.yy.com'
+      'http://www.testhost.com',
+      'https://www.testhost.com',
+      '//www.testhost.com'
     ];
     const falseExamples = [
-      '/www.yy.com',
+      '/www.testhost.com',
       'path/to/dest',
       './path/to/dest',
       '../path/to/dest',
